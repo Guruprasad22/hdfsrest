@@ -36,8 +36,11 @@ public class JettyRunner {
         try {
             jettyServer.start();
             jettyServer.join();
-        } finally {
-            jettyServer.destroy();
-        }
+        } catch(Exception e) {
+        	System.out.println("Exception caught while launching jersey");
+        	System.out.println(e);
+        }finally {
+        	jettyServer.destroy();
+        }            
     }
 }
